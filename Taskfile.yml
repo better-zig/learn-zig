@@ -16,7 +16,7 @@ env:
 
 # env file:
 dotenv:
- - .env
+  - .env
 
 ################################################################################################
 
@@ -44,17 +44,20 @@ tasks:
 
   new:
     cmds:
-      - mkdir demo; cd demo; zig init-exe
+      - mkdir ${NEW_PACKAGE_NAME}; cd ${NEW_PACKAGE_NAME}; zig init-exe
+    dir: packages/
 
   new:lib:
     cmds:
-      #      - mkdir ${NEW_PACKAGE_NAME}; cd ${NEW_PACKAGE_NAME}; zig init-lib
-      - mkdir demo; cd demo; zig init-lib
+      - mkdir ${NEW_PACKAGE_NAME}; cd ${NEW_PACKAGE_NAME}; zig init-lib
+    dir: packages/
 
   run:
     cmds:
-      - cd demo; zig build run
+      - cd ${NEW_PACKAGE_NAME}; zig build run
+    dir: packages/
 
   build:lib:
     cmds:
-      - cd demo; zig build test
+      - cd ${NEW_PACKAGE_NAME}; zig build test
+    dir: packages/
