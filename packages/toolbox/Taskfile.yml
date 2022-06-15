@@ -12,3 +12,7 @@ tasks:
   test:
     cmds:
       - zig test
+
+  mod:init:
+    cmds:
+      - zigmod init

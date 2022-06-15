@@ -1,0 +1,6 @@
+id: ekdyx0k8baed2drmmt4jg7n162wqbt5r518ecqfg084m5bym
+name: basic
+main: src/main.zig
+license: mit
+description: zig basic examples
+dependencies:
