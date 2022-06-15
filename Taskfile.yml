@@ -2,6 +2,17 @@ version: "3"
 
 ################################################################################################
 
+includes:
+  basic:
+    taskfile: ./packages/basic/Taskfile.yml
+    dir: ./packages/basic/
+
+  toolbox:
+    taskfile: ./packages/toolbox/Taskfile.yml
+    dir: ./packages/toolbox/
+
+################################################################################################
+
 #
 # global vars: https://taskfile.dev/#/usage?id=variables
 #
