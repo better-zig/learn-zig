@@ -1,5 +1,13 @@
 # learn-zig
 
+- learning zig language
+
+## Features:
+
+- [basic](./packages/basic/): zig basic example
+- [toolbox](./packages/toolbox/) : zig toolbox
+- [zig-utils](./packages/zig-utils/) : zig utils
+
 ## QuickStart:
 
 > install:
@@ -28,12 +36,6 @@ task basic:run
 ```ruby
 task basic:test
 ```
-
-## Features:
-
-- [basic](./packages/basic/): zig basic example
-- [toolbox](./packages/toolbox/) : zig toolbox
-- [zig-utils](./packages/zig-utils/) : zig utils
 
 ## Structure:
 
