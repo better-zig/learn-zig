@@ -33,3 +33,7 @@ tmp/
 .history/
 .env*
 !.env.local
+
+# for zig build:
+zig-cache/
+zig-out/
