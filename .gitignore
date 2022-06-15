@@ -37,3 +37,4 @@ tmp/
 # for zig build:
 zig-cache/
 zig-out/
+.zigmod/

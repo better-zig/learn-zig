@@ -16,3 +16,11 @@ tasks:
   mod:init:
     cmds:
       - zigmod init
+
+  add:
+    cmds:
+      - zigmod aq add 1/Hejsil/clap # clap
+
+  fetch:
+    cmds:
+      - zigmod fetch

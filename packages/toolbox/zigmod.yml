@@ -3,3 +3,4 @@ name: toolbox
 license: mit
 description: zig toolbox
 root_dependencies:
+  - src: git https://github.com/Hejsil/zig-clap
