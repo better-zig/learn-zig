@@ -15,4 +15,4 @@ tasks:
 
   mod:init:
     cmds:
-      - zigmod init 
+      - zigmod init

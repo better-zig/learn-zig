@@ -11,6 +11,10 @@ includes:
     taskfile: ./packages/toolbox/Taskfile.yml
     dir: ./packages/toolbox/
 
+  utils:
+    taskfile: ./packages/zig-utils/Taskfile.yml
+    dir: ./packages/zig-utils/
+
 ################################################################################################
 
 #

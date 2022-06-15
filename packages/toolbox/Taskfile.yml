@@ -11,7 +11,7 @@ tasks:
 
   test:
     cmds:
-      - zig test
+      - zig build test # zig test
 
   mod:init:
     cmds:

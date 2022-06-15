@@ -1,0 +1,6 @@
+id: kcp0iovhfywjfrrotxpxcp6on7wm1isi30psqdqagn212ei9
+name: utils
+main: src/main.zig
+license: mit
+description: zig utils
+dependencies:
