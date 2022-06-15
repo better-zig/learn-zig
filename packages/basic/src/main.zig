@@ -3,6 +3,9 @@ const std = @import("std");
 pub fn main() anyerror!void {
     std.log.info("All your codebase are belong to us.", .{});
     std.debug.print("Hello, {s}!\n", .{"World"});
+
+    const stdout = std.io.getStdOut().writer();
+    try stdout.print("Hello, {s}!\n", .{"world"});
 }
 
 test "basic test" {
