@@ -72,3 +72,10 @@ tasks:
     cmds:
       - cd ${NEW_PACKAGE_NAME}; zig build test
     dir: packages/
+
+  ###########################################################################
+
+  push:
+    cmds:
+      - git push origin main --tags
+      - repo_url=`git remote -v | grep push | awk -F ":" '{print $2}' | awk -F ".git" '{print "https://github.com/"$1}'`; open $repo_url
