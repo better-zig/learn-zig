@@ -5,6 +5,11 @@ tasks:
     cmds:
       - echo "os init"
 
+  exec:
+    cmds:
+      - task: run
+      - ./zig-out/bin/toolbox -h
+
   run:
     cmds:
       - zig build run

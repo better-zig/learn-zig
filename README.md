@@ -10,12 +10,20 @@
 
 ## QuickStart:
 
+> requirements:
+
+- zig: `0.10.0-dev.2617+47c4d4450`
+- zigmod: `zigmod r80 macos aarch64 none`
+
 > install:
 
 ```ruby
 
 # install zig:
-task install:zig
+task install:zig:dev
+
+-> % zig version
+0.10.0-dev.2617+47c4d4450
 
 # macos + m1 cpu:
 task install:zigmod:m1

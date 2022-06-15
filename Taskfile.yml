@@ -42,6 +42,14 @@ tasks:
       - echo "os init"
       - task: setup
 
+  # for macos + m1:
+  install:zig:dev:
+    cmds:
+      - mkdir -p $HOME/.local/bin/;
+      - cd $HOME/.local/bin/; curl -L https://ziglang.org/builds/zig-macos-aarch64-0.10.0-dev.2617+47c4d4450.tar.xz | tar -xJ --strip-components=1 -C .;
+      - chmod +x $HOME/.local/bin/zig;
+      - zig version
+
   install:zig:
     cmds:
       - brew install zig
