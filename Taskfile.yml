@@ -24,6 +24,7 @@ vars:
 #
 env:
   ENV1: testing-env
+  PATH: $PATH:$HOME/.local/bin
 
 # env file:
 dotenv:
@@ -46,6 +47,34 @@ tasks:
       - chmod +x $HOME/zls/zls
       - sudo $HOME/zls/zls configure
     ignore_error: true
+
+  #
+  # ref: https://github.com/nektro/zigmod
+  #
+  install:tools:
+    cmds:
+      - task: install:zigmod:m1
+
+  #
+  # ref: https://github.com/nektro/zigmod
+  #
+  # for macos + intel cpu
+  install:zigmod:intel:
+    cmds:
+      - mkdir -p $HOME/.local/bin/;
+      # - export PATH=$HOME/.local/bin:$PATH;
+      - curl  -L https://github.com/nektro/zigmod/releases/download/r80/zigmod-x86_64-macos -o $HOME/.local/bin/zigmod;
+      - chmod +x $HOME/.local/bin/zigmod;
+      - zigmod version
+
+  # for macos + m1 cpu
+  install:zigmod:m1:
+    cmds:
+      - mkdir -p $HOME/.local/bin/;
+      # - export PATH=$HOME/.local/bin:$PATH;
+      - curl  -L https://github.com/nektro/zigmod/releases/download/r80/zigmod-aarch64-macos -o $HOME/.local/bin/zigmod;
+      - chmod +x $HOME/.local/bin/zigmod;
+      - zigmod version
 
   docs:
     cmds:
