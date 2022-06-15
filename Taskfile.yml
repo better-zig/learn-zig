@@ -1,0 +1,60 @@
+version: "3"
+
+################################################################################################
+
+#
+# global vars: https://taskfile.dev/#/usage?id=variables
+#
+vars:
+  VAR1: "some-var"
+
+#
+# global env: https://taskfile.dev/#/usage?id=environment-variables
+#
+env:
+  ENV1: testing-env
+
+# env file:
+dotenv:
+ - .env
+
+################################################################################################
+
+tasks:
+  init:
+    cmds:
+      - echo "os init"
+      - task: setup
+
+  install:zig:
+    cmds:
+      - brew install zig
+      - zig version
+      - brew install xz # for zig zls
+      - mkdir $HOME/zls && cd $HOME/zls && curl -L https://github.com/zigtools/zls/releases/download/0.9.0/x86_64-macos.tar.xz | tar -xJ --strip-components=1 -C .
+      - chmod +x $HOME/zls/zls
+      - sudo $HOME/zls/zls configure
+    ignore_error: true
+
+  docs:
+    cmds:
+      - open https://ziglang.org/zh/learn/
+      - open https://ziglang.org/documentation/0.9.1/
+      - open https://aquila.red/
+
+  new:
+    cmds:
+      - mkdir demo; cd demo; zig init-exe
+
+  new:lib:
+    cmds:
+      #      - mkdir ${NEW_PACKAGE_NAME}; cd ${NEW_PACKAGE_NAME}; zig init-lib
+      - mkdir demo; cd demo; zig init-lib
+
+  run:
+    cmds:
+      - cd demo; zig build run
+
+  build:lib:
+    cmds:
+      - cd demo; zig build test
