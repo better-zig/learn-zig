@@ -17,19 +17,50 @@ task install:zigmod:intel
 
 ```
 
-> test run:
+> run:
 
 ```ruby
 task basic:run
 ```
 
+> test:
+
+```ruby
+task basic:test
+```
+
 ## Features:
 
-- [basic](./packages/basic/): basic zig example
-- [toolbox](./packages/toolbox/) : toolbox zig example
-
+- [basic](./packages/basic/): zig basic example
+- [toolbox](./packages/toolbox/) : zig toolbox
+- [zig-utils](./packages/zig-utils/) : zig utils
 
 ## Structure:
 
+```ruby
 
 
+-> % tree ./packages/ -L 2
+./packages/
+├── basic
+│   ├── Taskfile.yml
+│   ├── build.zig
+│   ├── src
+│   ├── zig-cache
+│   ├── zig-out
+│   └── zigmod.yml
+├── toolbox
+│   ├── Taskfile.yml
+│   ├── build.zig
+│   ├── src
+│   └── zigmod.yml
+└── zig-utils
+    ├── Taskfile.yml
+    ├── build.zig
+    ├── src
+    ├── zig-cache
+    └── zigmod.yml
+
+
+
+```
