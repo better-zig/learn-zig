@@ -23,6 +23,10 @@ includes:
     taskfile: ./packages/zig-to-c/Taskfile.yml
     dir: ./packages/zig-to-c/
 
+  c:
+    taskfile: ./packages/c/Taskfile.yml
+    dir: ./packages/c/
+
 ################################################################################################
 
 #
