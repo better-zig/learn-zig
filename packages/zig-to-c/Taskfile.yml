@@ -1,0 +1,18 @@
+version: "3"
+
+tasks:
+  init:
+    cmds:
+      - echo "os init"
+
+  run:
+    cmds:
+      - zig build run
+
+  test:
+    cmds:
+      - zig build test
+
+  mod:init:
+    cmds:
+      - zigmod init

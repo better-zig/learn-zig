@@ -1,0 +1,6 @@
+id: srp8pf2jt2em239kdzlk9usq5dcllz270vflk9nd6hg3o950
+name: to-c
+main: src/main.zig
+license: mit
+description: ffi to c 
+dependencies:

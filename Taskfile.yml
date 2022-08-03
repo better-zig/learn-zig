@@ -15,6 +15,14 @@ includes:
     taskfile: ./packages/zig-utils/Taskfile.yml
     dir: ./packages/zig-utils/
 
+  use:c:
+    taskfile: ./packages/zig-use-c/Taskfile.yml
+    dir: ./packages/zig-use-c/
+
+  to:c:
+    taskfile: ./packages/zig-to-c/Taskfile.yml
+    dir: ./packages/zig-to-c/
+
 ################################################################################################
 
 #
