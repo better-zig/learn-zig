@@ -8,6 +8,14 @@
 - [toolbox](./packages/toolbox/) : zig toolbox
 - [zig-utils](./packages/zig-utils/) : zig utils
 
+> 与 C 语言互操作性:
+
+- [c](./packages/c/src/main.c): 使用 zig 作为 C 编译器, 直接编译 C 代码
+  - `cd packages/c; task run`
+  - or `task c:run`
+- [zig-use-c](./packages/zig-use-c/src/main.zig): zig 调用 C 代码
+- [zig-to-c](./packages/zig-to-c/src/main.zig): zig 编译成 C Lib(C ABI), 基于 `FFI`, 被其他语言(如 dart)调用
+
 ## QuickStart:
 
 > requirements:
