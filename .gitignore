@@ -38,3 +38,9 @@ tmp/
 zig-cache/
 zig-out/
 .zigmod/
+
+
+# c build binaries:
+*.a
+*.o
+*.dylib
