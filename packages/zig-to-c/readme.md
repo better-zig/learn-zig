@@ -4,7 +4,10 @@
 
 ## quickStart:
 
-> generate c header:
+> generate c header: .h
+
+- use `zig v0.6.0` to generate `c header` with [docker image: zig v0.6.0](https://hub.docker.com/r/euantorano/zig)
+- generate result: [src/mathtest.h](src/mathtest.h)
 
 ```ruby
 
@@ -25,6 +28,8 @@ task: [to:c:docker:build] rm *.h;
 ```
 
 > build + run:
+
+- check [build.zig](build.zig)
 
 ```ruby
 # cd this-dir/; do:
