@@ -1,17 +1,27 @@
-const std = @import("std");
+const Builder = @import("std").build.Builder;
 
-pub fn build(b: *std.build.Builder) void {
-    // Standard release options allow the person running `zig build` to select
-    // between Debug, ReleaseSafe, ReleaseFast, and ReleaseSmall.
+pub fn build(b: *Builder) void {
+    const target = b.standardTargetOptions(.{});
     const mode = b.standardReleaseOptions();
 
-    const lib = b.addStaticLibrary("zig-to-c", "src/main.zig");
-    lib.setBuildMode(mode);
-    lib.install();
+    // todo x: fix src dir:
+    const lib = b.addSharedLibrary("mathtest", "src/mathtest.zig", b.version(1, 0, 0));
 
-    const main_tests = b.addTest("src/main.zig");
-    main_tests.setBuildMode(mode);
+    // todo x: fix null
+    const exe = b.addExecutable("main", null);
+    exe.setTarget(target);
+    exe.setBuildMode(mode);
 
-    const test_step = b.step("test", "Run library tests");
-    test_step.dependOn(&main_tests.step);
+    // todo x: fix src dir:
+    exe.addCSourceFile("src/main.c", &[_][]const u8{"-std=c99"});
+    exe.linkLibrary(lib);
+    exe.linkSystemLibrary("c");
+
+    b.default_step.dependOn(&exe.step);
+
+    const run_cmd = exe.run();
+
+    // todo x: build cmd
+    const test_step = b.step("run", "Run the program");
+    test_step.dependOn(&run_cmd.step);
 }
