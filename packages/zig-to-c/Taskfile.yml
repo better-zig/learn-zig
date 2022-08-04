@@ -5,6 +5,14 @@ tasks:
     cmds:
       - echo "os init"
 
+  # with zig v0.6.0, support `-femit-h` option
+  docker:build:
+    cmds:
+      # - docker pull euantorano/zig:0.6.0
+      - docker run --platform linux/x86_64 -v $PWD:/app euantorano/zig:0.6.0 build-lib src/mathtest.zig -femit-h
+      - cp *.h src/
+      - rm *.h;
+
   run:
     cmds:
       - zig build run
@@ -17,25 +25,17 @@ tasks:
     cmds:
       - zigmod init
 
-  build:lib:
-    cmds:
-      - zig build-lib  src/mathtest.zig -femit-h -femit-h
+  # build:lib:
+  #   cmds:
+  #     - zig build-lib  src/mathtest.zig -femit-h -femit-h
 
-  build:lib:shared:
-    cmds:
-      - zig build-lib  src/mathtest.zig -dynamic -femit-h
+  # build:lib:shared:
+  #   cmds:
+  #     - zig build-lib  src/mathtest.zig -dynamic -femit-h
 
-  build:exe:
-    cmds:
-      - zig build-exe --library libzigmath.a src/main.c
-
-  # with zig v0.6.0, support `-femit-h` option
-  docker:build:
-    cmds:
-      # - docker pull euantorano/zig:0.6.0
-      - docker run --platform linux/x86_64 -v $PWD:/app euantorano/zig:0.6.0 build-lib src/mathtest.zig -femit-h
-      - cp *.h src/
-      - rm *.h;
+  # build:exe:
+  #   cmds:
+  #     - zig build-exe --library libzigmath.a src/main.c
 
   clean:
     cmds:
