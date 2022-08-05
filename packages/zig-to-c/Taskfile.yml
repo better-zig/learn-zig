@@ -13,6 +13,13 @@ tasks:
       - cp *.h src/
       - rm *.h;
 
+  # gen c header, zig v0.9+ (直接生成的头文件, 包含大量冗余代码, 且编译报错, 不 work)
+  gen:
+    cmds:
+      - zig build-lib -fno-stage1 -femit-h src/mathtest.zig
+      - cp *.h src/
+      - rm *.h;
+
   run:
     cmds:
       - zig build run
