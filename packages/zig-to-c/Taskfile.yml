@@ -22,7 +22,7 @@ tasks:
 
   run:
     cmds:
-      - zig build run
+      - zig build run # --verbose-cc  # 打印编译细节
 
   test:
     cmds:
