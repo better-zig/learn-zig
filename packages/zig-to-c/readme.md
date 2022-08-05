@@ -6,8 +6,9 @@
 
 > generate c header: .h
 
-- use `zig v0.6.0` to generate `c header` with [docker image: zig v0.6.0](https://hub.docker.com/r/euantorano/zig)
-- generate result: [src/mathtest.h](src/mathtest.h)
+- ✅ use `zig v0.6.0` to generate `c header` with [docker image: zig v0.6.0](https://hub.docker.com/r/euantorano/zig)
+- ✅ generate result: [src/mathtest.h](src/mathtest.h)
+- ❕ `zig v0.9+`, `zig build-lib -fno-stage1 -femit-h src/mathtest.zig`, not working properly.
 
 ```ruby
 
@@ -24,6 +25,8 @@ Warning: Unable to write cache file '/root/.cache/zig/stage1/exe/p4rsuZZL85fcylu
 task: [to:c:docker:build] cp *.h src/
 task: [to:c:docker:build] rm *.h;
 
+# v0.9+, try this, but not working properly!
+zig build-lib -fno-stage1 -femit-h src/mathtest.zig
 
 ```
 
