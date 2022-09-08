@@ -8,7 +8,8 @@ tasks:
   exec:
     cmds:
       - task: run
-      - ./zig-out/bin/toolbox -h
+      - ./zig-out/bin/toolbox --help
+      - ./zig-out/bin/toolbox -n 2233 -s hello
 
   run:
     cmds:
