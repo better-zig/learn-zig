@@ -62,6 +62,14 @@ tasks:
       - chmod +x $HOME/.local/bin/zig;
       - zig version
 
+  install:zigup:
+    cmds:
+      - mkdir -p $HOME/.local/bin/;
+      - cd $HOME/.local/bin/; curl -LJO https://github.com/marler8997/zigup/releases/download/v2022_08_25/zigup.macos-latest-aarch64.zip && unzip zigup.macos-latest-aarch64.zip && rm zigup.macos-latest-aarch64.zip
+      - chmod +x $HOME/.local/bin/zigup;
+      - zigup
+    ignore_error: true
+
   install:zig:
     cmds:
       - brew install zig
@@ -125,6 +133,10 @@ tasks:
     cmds:
       - cd ${NEW_PACKAGE_NAME}; zig build test
     dir: packages/
+
+  update:
+    cmds:
+      - zigup list
 
   ###########################################################################
 
