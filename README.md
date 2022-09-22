@@ -2,6 +2,11 @@
 
 - learning zig language
 
+> related:
+
+- ✅ https://github.com/better-zig/ziglings-solutions
+    - zig 语法练习
+
 ## Features:
 
 - [basic](./packages/basic/): zig basic example
